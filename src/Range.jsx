@@ -20,6 +20,9 @@ class Range extends React.Component {
     allowCross: PropTypes.bool,
     disabled: PropTypes.bool,
     tabIndex: PropTypes.arrayOf(PropTypes.number),
+    'aria-label': PropTypes.arrayOf(PropTypes.string),
+    'aria-labelledby': PropTypes.arrayOf(PropTypes.string),
+    ariaValueTextFormatter: PropTypes.arrayOf(PropTypes.func),
   };
 
   static defaultProps = {
@@ -27,6 +30,9 @@ class Range extends React.Component {
     allowCross: true,
     pushable: false,
     tabIndex: [],
+    'aria-label': [],
+    'aria-labelledby': [],
+    ariaValueTextFormatter: [],
   };
 
   constructor(props) {
@@ -332,6 +338,9 @@ class Range extends React.Component {
       trackStyle,
       handleStyle,
       tabIndex,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
+      ariaValueTextFormatter,
     } = this.props;
 
     const offsets = bounds.map(v => this.calcOffset(v));
@@ -349,6 +358,9 @@ class Range extends React.Component {
       dragging: handle === i,
       index: i,
       tabIndex: tabIndex[i] || 0,
+      'aria-label': ariaLabel[i],
+      'aria-labelledby': ariaLabelledBy[i],
+      ariaValueTextFormatter: ariaValueTextFormatter[i],
       min,
       max,
       disabled,

@@ -13,6 +13,9 @@ class Slider extends React.Component {
     disabled: PropTypes.bool,
     autoFocus: PropTypes.bool,
     tabIndex: PropTypes.number,
+    'aria-label': PropTypes.string,
+    'aria-labelledby': PropTypes.string,
+    ariaValueTextFormatter: PropTypes.func,
   };
 
   constructor(props) {
@@ -147,6 +150,9 @@ class Slider extends React.Component {
       trackStyle,
       handleStyle,
       tabIndex,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
+      ariaValueTextFormatter,
       min,
       max,
       handle: handleGenerator,
@@ -165,6 +171,9 @@ class Slider extends React.Component {
       max,
       index: 0,
       tabIndex,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
+      ariaValueTextFormatter,
       style: handleStyle[0] || handleStyle,
       ref: h => this.saveHandle(0, h),
     });
