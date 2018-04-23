@@ -1,3 +1,11 @@
+# Note to evalia devs
+
+I had to add a couple aria attributes to this slider repo.  I made a PR here:
+
+https://github.com/react-component/slider/pull/420
+
+If/once that gets merged in, we can switch back to the normal react-component/slider repo.
+
 # rc-slider
 ---
 
